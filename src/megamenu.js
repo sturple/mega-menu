@@ -4,7 +4,9 @@
         //	Add hover code to Bootstrap menus
         $('ul.nav li.dropdown').on('mouseover',function () {
             if (window.innerWidth <= 768) return;
-            var menu = $(this).find('.dropdown-menu');
+            var dropdown = $(this);
+            dropdown.addClass('open');
+            var menu = dropdown.find('.dropdown-menu');
             //  Figure out whether the menu should go below (default)
             //  or above (if it doesn't fit below)
             var offset = 20;
@@ -28,11 +30,10 @@
             } else {
                 menu.removeClass('flipped');
             }
-            menu.stop(true,true).delay(200).fadeIn(500);
         }).on('mouseout',function () {
             if (window.innerWidth < 768) return;
-            var menu = $(this).find('.dropdown-menu');
-            menu.stop(true,true).delay(200).fadeOut(500,function () {   menu.attr('style','');  });
+            var dropdown = $(this);
+            dropdown.removeClass('open');
         });
     });
 })();
