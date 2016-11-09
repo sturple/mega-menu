@@ -28,6 +28,8 @@
                 menu.css('right','0px');
                 menu.addClass('flipped');
             } else {
+                menu.css('left','0px');
+                menu.css('right','auto');
                 menu.removeClass('flipped');
             }
         }).on('mouseout',function () {
