@@ -19,9 +19,7 @@
             //  Figure out whether the menu should go to the right
             //  (default) or to the left (if it doesn't fit to the
             //  right)
-            menu.show();
-            var left = menu.offset().left;
-            menu.hide();
+            var left = menu.parent().offset().left;
             var right = $(window).innerWidth() - left - menu.outerWidth();
             if (right < 0) {
                 menu.css('left','auto');
