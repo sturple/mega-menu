@@ -24,6 +24,9 @@
             if (right < 0) {
                 menu.css('left','auto');
                 menu.css('right','0px');
+                menu.addClass('flipped');
+            } else {
+                menu.removeClass('flipped');
             }
             menu.stop(true,true).delay(200).fadeIn(500);
         }).on('mouseout',function () {

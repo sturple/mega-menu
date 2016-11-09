@@ -5,10 +5,11 @@
         <script type="text/javascript" src="./bootstrap.min.js"></script>
         <script type="text/javascript" src="./megamenu.js"></script>
         <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./megamenu.css">
     </head>
     <body>
         <div style="height:1000px;">a</div>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default fgms-mega-menu">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mega-menu-navbar-collapse-1" aria-expanded="false">
@@ -22,9 +23,14 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Item <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a>Sub-item 1</a></li>
-                                <li><a>Sub-item 2</a></li>
+                            <div class="dropdown-menu">
+                                <ul class="fgms-mega-menu-nav">
+                                    <li><a>Sub-item 1</a></li>
+                                    <li><a>Sub-item 2</a></li>
+                                </ul>
+                                <div class="fgms-mega-menu-content">
+                                    Hello world
+                                </div>
                             </ul>
                         </li>
                     </ul>
