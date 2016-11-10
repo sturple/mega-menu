@@ -22,12 +22,22 @@
             //  (default) or to the left (if it doesn't fit to the
             //  right)
             var left = menu.parent().offset().left;
-            var right = $(window).innerWidth() - left - menu.outerWidth();
-            if (right < 0) {
+            var window_width = $(window).innerWidth();
+            if (left > (window_width / 2)) {
+                if ((left + menu.parent().outerWidth() - menu.outerWidth()) < 0) {
+                    menu.addClass('no-fit');
+                } else {
+                    menu.removeClass('no-fit');
+                }
                 menu.css('left','auto');
                 menu.css('right','0px');
                 menu.addClass('flipped');
             } else {
+                if ((left + menu.outerWidth()) > window_width) {
+                    menu.addClass('no-fit');
+                } else {
+                    menu.removeClass('no-fit');
+                }
                 menu.css('left','0px');
                 menu.css('right','auto');
                 menu.removeClass('flipped');
